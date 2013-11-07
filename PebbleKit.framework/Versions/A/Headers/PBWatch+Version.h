@@ -97,6 +97,8 @@ typedef enum {
   FirmwareMetadataPlatformPebbleOneEV2 = 2,
   FirmwareMetadataPlatformPebbleOneEV2_3 = 3,
   FirmwareMetadataPlatformPebbleOneEV2_4 = 4,
+  FirmwareMetadataPlatformPebbleOnePointFive = 5,
+  FirmwareMetadataPlatformPebbleTwoPointZero = 6,
   FirmwareMetadataPlatformPebbleOneBigboard = 0xff,
   FirmwareMetadataPlatformPebbleOneBigboard2 = 0xfe,
 } FirmwareMetadataPlatform;
@@ -132,6 +134,14 @@ typedef enum {
  *  @return A string of the hardware platform
  */
 + (NSString*)hardwarePlatformToString:(FirmwareMetadataPlatform)hardwarePlatform;
+
+/**
+ *  Converts an NSString hardware platform string to the corresponding
+ *  FirmwareMetadataPlatform value.
+ *  @param hardwarePlatformString The string representing the hardware platform.
+ *  @return The hardware platform enum value
+ */
++ (FirmwareMetadataPlatform)stringToHardwarePlatform:(NSString *)hardwarePlatformString;
 
 @end
 

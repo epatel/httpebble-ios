@@ -11,6 +11,9 @@
 		336523A517548F1A003E3767 /* whiteButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 336523A117548F1A003E3767 /* whiteButton@2x.png */; };
 		336523A617548F1A003E3767 /* whiteButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 336523A217548F1A003E3767 /* whiteButtonHighlight.png */; };
 		336523A717548F1A003E3767 /* whiteButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 336523A317548F1A003E3767 /* whiteButtonHighlight@2x.png */; };
+		3A880351182B154400EE0E52 /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A880350182B154400EE0E52 /* PebbleKit.framework */; };
+		3A880353182B155700EE0E52 /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A880352182B155700EE0E52 /* PebbleVendor.framework */; };
+		3A880357182B15FB00EE0E52 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A880356182B15FB00EE0E52 /* CFNetwork.framework */; };
 		89A25B69174DB490008BED04 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A25B68174DB490008BED04 /* NSData+Base64.m */; };
 		89AC134117458F0F006847A7 /* PebbleModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89AC133F17458F0F006847A7 /* PebbleModel.xcdatamodeld */; };
 		89AC134717459B20006847A7 /* KBPebbleValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AC134617459B20006847A7 /* KBPebbleValue.m */; };
@@ -30,8 +33,6 @@
 		89E96D40173DA96B00E2DE9D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E96D3F173DA96B00E2DE9D /* Default-568h@2x.png */; };
 		89E96D43173DA96B00E2DE9D /* KBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E96D42173DA96B00E2DE9D /* KBViewController.m */; };
 		89E96D46173DA96B00E2DE9D /* KBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89E96D44173DA96B00E2DE9D /* KBViewController.xib */; };
-		89E96D4D173DAA9800E2DE9D /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E96D4C173DAA9800E2DE9D /* PebbleKit.framework */; };
-		89E96D4F173DAAA200E2DE9D /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E96D4E173DAAA200E2DE9D /* PebbleVendor.framework */; };
 		89E96D52173DB13700E2DE9D /* KBPebbleThing.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E96D51173DB13700E2DE9D /* KBPebbleThing.m */; };
 		89E96D54173DB46600E2DE9D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E96D53173DB46600E2DE9D /* libz.dylib */; };
 		89E96D56173DB46D00E2DE9D /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E96D55173DB46D00E2DE9D /* CoreBluetooth.framework */; };
@@ -45,6 +46,9 @@
 		336523A117548F1A003E3767 /* whiteButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteButton@2x.png"; sourceTree = "<group>"; };
 		336523A217548F1A003E3767 /* whiteButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButtonHighlight.png; sourceTree = "<group>"; };
 		336523A317548F1A003E3767 /* whiteButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		3A880350182B154400EE0E52 /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleKit.framework; sourceTree = "<group>"; };
+		3A880352182B155700EE0E52 /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleVendor.framework; sourceTree = "<group>"; };
+		3A880356182B15FB00EE0E52 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		89A25B67174DB490008BED04 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		89A25B68174DB490008BED04 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		89AC134017458F0F006847A7 /* PebbleModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PebbleModel.xcdatamodel; sourceTree = "<group>"; };
@@ -71,8 +75,6 @@
 		89E96D41173DA96B00E2DE9D /* KBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KBViewController.h; sourceTree = "<group>"; };
 		89E96D42173DA96B00E2DE9D /* KBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KBViewController.m; sourceTree = "<group>"; };
 		89E96D45173DA96B00E2DE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KBViewController.xib; sourceTree = "<group>"; };
-		89E96D4C173DAA9800E2DE9D /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleKit.framework; sourceTree = "<group>"; };
-		89E96D4E173DAAA200E2DE9D /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleVendor.framework; sourceTree = "<group>"; };
 		89E96D50173DB13700E2DE9D /* KBPebbleThing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBPebbleThing.h; sourceTree = "<group>"; };
 		89E96D51173DB13700E2DE9D /* KBPebbleThing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBPebbleThing.m; sourceTree = "<group>"; };
 		89E96D53173DB46600E2DE9D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -87,18 +89,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A880357182B15FB00EE0E52 /* CFNetwork.framework in Frameworks */,
 				89AC1385174632E4006847A7 /* CoreLocation.framework in Frameworks */,
 				89AC13831745B12D006847A7 /* CoreData.framework in Frameworks */,
 				89E96D5C173DB49500E2DE9D /* MessageUI.framework in Frameworks */,
 				89E96D5A173DB47D00E2DE9D /* CoreMotion.framework in Frameworks */,
 				89E96D58173DB47600E2DE9D /* ExternalAccessory.framework in Frameworks */,
 				89E96D56173DB46D00E2DE9D /* CoreBluetooth.framework in Frameworks */,
+				3A880353182B155700EE0E52 /* PebbleVendor.framework in Frameworks */,
 				89E96D54173DB46600E2DE9D /* libz.dylib in Frameworks */,
 				89E96D2A173DA96B00E2DE9D /* UIKit.framework in Frameworks */,
 				89E96D2C173DA96B00E2DE9D /* Foundation.framework in Frameworks */,
 				89E96D2E173DA96B00E2DE9D /* CoreGraphics.framework in Frameworks */,
-				89E96D4D173DAA9800E2DE9D /* PebbleKit.framework in Frameworks */,
-				89E96D4F173DAAA200E2DE9D /* PebbleVendor.framework in Frameworks */,
+				3A880351182B154400EE0E52 /* PebbleKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +128,9 @@
 		89E96D28173DA96B00E2DE9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A880356182B15FB00EE0E52 /* CFNetwork.framework */,
+				3A880352182B155700EE0E52 /* PebbleVendor.framework */,
+				3A880350182B154400EE0E52 /* PebbleKit.framework */,
 				89E96D5B173DB49500E2DE9D /* MessageUI.framework */,
 				89E96D59173DB47D00E2DE9D /* CoreMotion.framework */,
 				89E96D57173DB47600E2DE9D /* ExternalAccessory.framework */,
@@ -132,8 +138,6 @@
 				89E96D53173DB46600E2DE9D /* libz.dylib */,
 				89AC1384174632E4006847A7 /* CoreLocation.framework */,
 				89AC13821745B12D006847A7 /* CoreData.framework */,
-				89E96D4E173DAAA200E2DE9D /* PebbleVendor.framework */,
-				89E96D4C173DAA9800E2DE9D /* PebbleKit.framework */,
 				89E96D29173DA96B00E2DE9D /* UIKit.framework */,
 				89E96D2B173DA96B00E2DE9D /* Foundation.framework */,
 				89E96D2D173DA96B00E2DE9D /* CoreGraphics.framework */,
@@ -349,7 +353,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"/Users/epatel/Downloads/httpebble-ios-master-2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "httpebble/httpebble-Prefix.pch";
@@ -366,7 +371,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"/Users/epatel/Downloads/httpebble-ios-master-2",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "httpebble/httpebble-Prefix.pch";

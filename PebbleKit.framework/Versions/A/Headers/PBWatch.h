@@ -10,9 +10,31 @@
 
 @protocol PBWatchDelegate;
 @class PBVersionInfo;
+@class PBDataLoggingService;
 
 /**
  *  Represents a Pebble watch.
+ *
+ *  On iOS, there is the notion of a "communication session" between an app and
+ *  the Pebble watch. You can imagine this as a "data pipe" directly from the
+ *  watch to your app. However, there is only one session for 3rd party apps.
+ *  This one session has to be shared among all 3rd party apps that want to
+ *  communicate with Pebble (excluding the official Pebble iOS app).
+ *
+ *  Unfortunately, the session can only be opened from the phone app. This means
+ *  that the iOS app has to start talking to the watch first to open the
+ *  communications channel; the other way around is not possible.
+ *  Most methods in the PBWatch categories (Ping), (Version), (Sports), (Golf)
+ *  and (AppMessages) all implicitly open the shared communication session.
+ *
+ *  Lastly, iOS provides no good way to manage how the one shared session is
+ *  accessed or used. Simply, the last iOS app to try to open it, wins and gets
+ *  to use it. Therefore, it is important that your iOS app does **not** try
+ *  communicate when a Pebble is connected.
+ *
+ *  When the user has stopped using your app (e.g. when going to the background
+ *  or when explicitely stopping a certain activity in the app) your iOS app
+ *  should close the communication session using the -closeSession: method.
  */
 @interface PBWatch : NSObject
 
@@ -53,26 +75,11 @@
 @property (nonatomic, readwrite, strong) id userInfo;
 
 /**
- *  The opaque data representing the Bluetooth device, that can be used to
- *  ask iOS to connect to the device.
- *  @see -wake
- */
-@property (nonatomic, readonly) NSData *wakeToken;
-
-/**
  *  The date when the watch was last known to be connected.
  *  This date will be updated automatically when the watch connects and
  *  disconnects. While the watch is being connected, this date will not be updated.
  */
 @property (nonatomic, readonly) NSDate *lastConnectedDate;
-
-/**
- *  Attemps to "wake" the Pebble, which means iOS will try
- *  opening a connection. This method only works on iOS 6 or newer;
- *  on older iOS versions this method has no effect.
- *  @see PBWatchDelegate
- */
-- (void)wake;
 
 /**
  *  Developer-friendly debugging description of the watch.

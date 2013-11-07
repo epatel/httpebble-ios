@@ -31,6 +31,10 @@ typedef enum {
   PBErrorCodeDictionaryUnsupportedValueClass,
   PBErrorCodeDictionaryInternalConsistency,
   PBErrorCodeInvalidArguments,
+  PBErrorCodePebbleAppUnreachable,
+  PBErrorCodePebbleAppRequestTimeout,
+  PBErrorCodePebbleAppEmptyResponse,
+  PBErrorCodePebbleAppUnexpectedResponse,
 } PBErrorCode;
 
 @interface NSError (Pebble)

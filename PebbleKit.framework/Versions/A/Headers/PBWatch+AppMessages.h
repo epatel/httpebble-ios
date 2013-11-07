@@ -8,6 +8,11 @@
 
 #import <PebbleKit/PebbleKit.h>
 
+typedef enum {
+  PBAppStateNotRunning = 0x00,
+  PBAppStateRunning = 0x01,
+} PBAppState;
+
 @interface PBWatch (AppMessages)
 
 /**
@@ -65,12 +70,21 @@
  */
 - (id)appMessagesAddReceiveUpdateHandler:(BOOL(^)(PBWatch *watch, NSDictionary *update))onReceive;
 
+- (id)appMessagesAddAppLifecycleUpdateHandler:(void(^)(PBWatch *watch, NSUUID *uuid,
+                                                       PBAppState newAppState))onLifecycleUpdate;
+
+
+// INTERNAL USE ONLY
+- (id)appMessagesAddReceiveAllUpdatesHandler:(BOOL(^)(PBWatch *watch, NSUUID *uuid, NSDictionary *update))onReceive;
+
 /**
  *  Removes a receive handler that was previously installed using -appMessagesAddReceiveUpdateHandler:
  *  @param opaqueHandle The handle object as returned by -appMessagesAddReceiveUpdateHandler:
  *  @see -appMessagesAddReceiveUpdateHandler:
  */
 - (void)appMessagesRemoveUpdateHandler:(id)opaqueHandle;
+
+- (void)appMessagesFetchAppState:(void(^)(PBWatch *watch, NSError *error))onSent;
 
 /**
  *  Sends a command to launch the application on the watch.

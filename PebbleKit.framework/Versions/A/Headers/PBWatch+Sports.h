@@ -31,12 +31,12 @@ extern NSNumber *PBSportsTimeKey;
 extern NSNumber *PBSportsDistanceKey;
 
 /**
- *  The key of the "Pace" field.
+ *  The key of the general purpose "Data" field.
  *  The value must be an NSString (max. ~5 characters).
  *  @see -sportsAppUpdate:onSent:
  *  @see PBSportsUpdate
  */
-extern NSNumber *PBSportsPaceKey;
+extern NSNumber *PBSportsDataKey;
 
 /**
  *  The key of the "Activity State".
@@ -67,16 +67,15 @@ extern NSNumber *PBSportsActivityStateKey;
 @property (nonatomic, readwrite, assign) float distance;
 
 /**
- *  The current pace in min/km or min/mi. The possible range is currently limited from -99.99 to 99.99, inclusive.
- *  The unit of distance is dependent on the current unit setting.
+ *  General purpose data variable. The possible range is currently limited from -99.99 to 99.99, inclusive.
  *  @see -sportsAppSetMetric:onSent:
  */
-@property (nonatomic, readwrite, assign) float pace;
+@property (nonatomic, readwrite, assign) float data;
 
 /**
  *  Convenience method to create an update object.
  */
-+ (PBSportsUpdate*)updateWithTime:(NSTimeInterval)time distance:(float)distance pace:(float)pace;
++ (PBSportsUpdate*)updateWithTime:(NSTimeInterval)time distance:(float)distance data:(float)data;
 
 /**
  *  Creates an update dictionary from the receiver, that can be used with -sportsAppUpdate:onSent:.
@@ -139,6 +138,15 @@ typedef enum {
  *  @param error nil if the operation was successful, or else an NSError with more information why it failed.
  */
 - (void)sportsAppSetMetric:(BOOL)isMetric onSent:(void(^)(PBWatch *watch, NSError *error))onSent;
+
+/**
+ *  Send a command to the sports app on the watch that the receiver represents,
+ *  to set the preferred  data label (either PACE or SPEED) and corresponding units.
+ *  @param isMetric YES to request metric units or NO to request imperial units
+ *  @param onSent The handler that will be called when the unit command has been sent or timed out (after 1.5 secs).
+ *  @param error nil if the operation was successful, or else an NSError with more information why it failed.
+ */
+- (void)sportsAppSetLabel:(BOOL)isPace onSent:(void(^)(PBWatch *watch, NSError *error))onSent;
 
 /**
  *  Send a command to the sports app on the watch that the receiver represents, to set the state of the

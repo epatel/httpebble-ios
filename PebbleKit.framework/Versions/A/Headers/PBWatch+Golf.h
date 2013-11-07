@@ -58,6 +58,7 @@ extern NSNumber *PBGolfParKey;
 typedef enum {
   GolfAppCommandPrevious = 0x01,
   GolfAppCommandNext = 0x02,
+  GolfAppCommandSelect = 0x03,
 } GolfAppCommand;
 
 /**

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class PBWatch;
+@class PBDataLoggingService;
 @protocol PBPebbleCentralDelegate;
 
 /**
@@ -20,6 +21,12 @@
  @returns The default central singleton instance.
  */
 + (PBPebbleCentral*)defaultCentral;
+
+/**
+ *  Enables debug logs. The logs will be routed to the system log (ASL) and
+ *  console. It is advised to call this before making any other calls to PebbleKit.
+ */
++ (void)setDebugLogsEnabled:(BOOL)logsEnabled;
 
 /**
  The watches that are currently connected. Do not cache the array because it can change over time.
@@ -55,6 +62,8 @@
  Returns the most recently connected watch from the -registeredWatches array.
  */
 - (PBWatch*)lastConnectedWatch;
+
+@property (nonatomic, readonly) PBDataLoggingService *dataLoggingService;
 
 @end
 
